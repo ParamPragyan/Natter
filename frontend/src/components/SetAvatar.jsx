@@ -7,8 +7,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import { setAvatarRoute } from "../utils/APIRoutes";
+import avatar1 from "../assets/user.png"
 export default function SetAvatar() {
-  const api = `https://api.multiavatar.com/4645646`;
+  const api = `https://api.multiavatar.com/45678945`;
   const navigate = useNavigate();
   const [avatars, setAvatars] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -21,10 +22,13 @@ export default function SetAvatar() {
     theme: "dark",
   };
 
-  useEffect(async () => {
-    if (!localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY))
-      navigate("/login");
-  }, []);
+  useEffect(() => {
+    const xyxy = async () => {
+      if (!localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY))
+        navigate("/login");
+    };
+    xyxy();
+  }, [navigate]);
 
   const setProfilePicture = async () => {
     if (selectedAvatar === undefined) {
@@ -52,49 +56,76 @@ export default function SetAvatar() {
     }
   };
 
-  useEffect(async () => {
-    const data = [];
-    for (let i = 0; i < 4; i++) {
-      const image = await axios.get(
-        `${api}/${Math.round(Math.random() * 1000)}`
-      );
-      const buffer = new Buffer(image.data);
-      data.push(buffer.toString("base64"));
-    }
-    setAvatars(data);
-    setIsLoading(false);
-  }, []);
+  useEffect(() => {
+    const randomapi = async () => {
+      const data = [`https://api.multiavatar.com/45678945.png`,`https://api.multiavatar.com/45678995.png`, `https://api.multiavatar.com/45628995.png`, `https://api.multiavatar.com/15628995.png`,`https://api.multiavatar.com/29628995.png`, `https://api.multiavatar.com/46628995.png`, `https://api.multiavatar.com/55628995.png`,`https://api.multiavatar.com/65628995.png`,`https://api.multiavatar.com/75628995.png`];
+      try {
+        // for (let i = 0; i < 4; i++) {
+        //   // const url = `${api}${Math.round(Math.random() * 1000)}`;
+        //   // console.log(url);
+        //   const image = await axios.get(`${api}/${Math.round(Math.random()*1000)}`);
+        //   // console.log(image);
+        //   const buffer = new Buffer(image.data);
+        //   data.push(buffer.toString("base64"));
+        //   console.log(data);
+        // }
+        setAvatars(data);
+        setIsLoading(false);
+      } catch (err) {
+        console.error(err.response.data);
+        setIsLoading(false);
+      }
+    };
+    randomapi();
+  }, [api]);
+
+
+
+    // const avtr = [
+    //   "https://api.multiavatar.com/459978945.png",
+    //   "https://api.multiavatar.com/45672945.png",
+    //   "https://api.multiavatar.com/45678945.png"
+    // ]
+
+
+
+
+
+
+
   return (
     <>
       {isLoading ? (
+        
         <Container>
           <img src={loader} alt="loader" className="loader" />
         </Container>
       ) : (
         <Container>
           <div className="title-container">
-            <h1>Pick an Avatar as your profile picture</h1>
+            <h1 className="text-[black] text-[3rem] font-[900] ">CHOOSE YOUR AVATAR</h1>
           </div>
           <div className="avatars">
             {avatars.map((avatar, index) => {
               return (
-                <div
+                <div 
+                  key={index}
                   className={`avatar ${
                     selectedAvatar === index ? "selected" : ""
                   }`}
                 >
                   <img
-                    src={`data:image/svg+xml;base64,${avatar}`}
+                    src={avatar}
                     alt="avatar"
                     key={avatar}
                     onClick={() => setSelectedAvatar(index)}
                   />
                 </div>
               );
-            })}
+            })} 
           </div>
-          <button onClick={setProfilePicture} className="submit-btn">
-            Set as Profile Picture
+          <button onClick={setProfilePicture} className="submit-btn text-[white] text-[2rem] rounded-[50%] p-[3rem] bg-[black]">
+            select
           </button>
           <ToastContainer />
         </Container>
@@ -108,8 +139,8 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #9bfaf8;
   gap: 3rem;
-  background-color: #131324;
   height: 100vh;
   width: 100vw;
 
@@ -117,13 +148,10 @@ const Container = styled.div`
     max-inline-size: 100%;
   }
 
-  .title-container {
-    h1 {
-      color: white;
-    }
-  }
+ 
   .avatars {
     display: flex;
+    
     gap: 2rem;
 
     .avatar {
@@ -140,21 +168,11 @@ const Container = styled.div`
       }
     }
     .selected {
-      border: 0.4rem solid #4e0eff;
+      border: 0.4rem solid #000;
+      filter: drop-shadow(0px 0px 50px black);
+
     }
   }
-  .submit-btn {
-    background-color: #4e0eff;
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 0.4rem;
-    font-size: 1rem;
-    text-transform: uppercase;
-    &:hover {
-      background-color: #4e0eff;
-    }
+  
   }
 `;

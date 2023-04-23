@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import styled from "styled-components";
 import Logo from "../assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -46,9 +47,9 @@ export default function Register() {
         toastOptions
       );
       return false;
-    } else if (password.length < 8) {
+    } else if (password.length < 6) {
       toast.error(
-        "Password should be equal or greater than 8 characters.",
+        "Password should be equal or greater than 6 characters.",
         toastOptions
       );
       return false;
@@ -85,32 +86,32 @@ export default function Register() {
 
   return (
     <>
-      {/* <FormContainer> */}
-      <div className="h-[100vh] w-full bg-[#070707] flex justify-center items-center">
+      <FormContainer>
+      <div className=" container h-[100vh] w-full bg-[#070707] flex justify-center items-center">
       <form className=" drop1 flex flex-col justify-center items-center gap-[1.5rem] h-[40rem] w-[30rem] p-[5rem] py-[8rem] rounded-[20px] bg-[#000000] " action="" onSubmit={(event) => handleSubmit(event)}>
           <div className="brand flex item-center justify-center">
             <img className="h-[5rem]" src={Logo} alt="logo" />
             <h1 className="text-[2rem] pl-[.5rem] text-center flex items-center justify-center text-[white]" >NATTER</h1>
           </div>
-          <input className="w-full p-[1rem] rounded-[5px] bg-[#000000] border-[#ffffff8f] border-b-[2px]"
+          <input className="w-full p-[1rem] rounded-[5px] text-[white] bg-[#000000] border-[#ffffff8f] border-b-[2px]"
             type="text"
             placeholder="Username"
             name="username"
             onChange={(e) => handleChange(e)}
           />
-          <input className="w-full p-[1rem] rounded-[5px] bg-[#000000] border-[#ffffff8f] border-b-[2px]"
+          <input className="w-full p-[1rem] rounded-[5px] text-[white] bg-[#000000] border-[#ffffff8f] border-b-[2px]"
             type="email"
             placeholder="Email"
             name="email"
             onChange={(e) => handleChange(e)}
           />
-          <input className="w-full p-[1rem] rounded-[5px] bg-[#000000] border-[#ffffff8f] border-b-[2px]"
+          <input className="w-full p-[1rem] rounded-[5px] text-[white] bg-[#000000] border-[#ffffff8f] border-b-[2px]"
             type="password"
             placeholder="Password"
             name="password"
             onChange={(e) => handleChange(e)}
           />
-          <input className="w-full p-[1rem] rounded-[5px] bg-[#000000] border-[#ffffff8f] border-b-[2px]"
+          <input className="w-full p-[1rem] rounded-[5px] text-[white] bg-[#000000] border-[#ffffff8f] border-b-[2px]"
             type="password"
             placeholder="Confirm Password"
             name="confirmPassword"
@@ -124,9 +125,15 @@ export default function Register() {
         </form>
       </div>
         
-      {/* </FormContainer> */}
+      </FormContainer>
       <ToastContainer />
     </>
   );
 }
 
+const FormContainer = styled.div`
+.container {
+  background-color: #080808;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24.98' height='25' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='96' height='96' fill-opacity='0.85' fill='%23000000'/%3E%3C/svg%3E");
+}
+`;

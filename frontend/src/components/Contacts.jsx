@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Logo from "../assets/logo.png";
 import me from "../assets/me.png"
+import avatar1 from "../assets/user.png"
+
 
 
 export default function Contacts({ contacts, changeChat }) {
@@ -19,27 +21,34 @@ export default function Contacts({ contacts, changeChat }) {
     setCurrentSelected(index);
     changeChat(contact);
   };
+
+
+
   return (
     <>
       {currentUserImage && currentUserImage && (
-        <Container>
-          <div className="brand ">
-            <img src={Logo} alt="logo" />
-            <h3 className="font-[netter]">natter</h3>
+        <Container  >
+      
+
+          <div className="brand  ">
+            <img  className="" src={Logo} alt="logo" />
+            <h3 className="font-[netter] text-[white] ">NATTER</h3>
           </div>
-          <div className="contacts">
+          <div className="contacts flex flex-col items-center overflow-auto ">
             {contacts.map((contact, index) => {
               return (
                 <div
                   key={contact._id}
-                  className={`contact bg-[#085866] ${
+                  className={`contact bg-[#000000] border-b-[1px] border-[#a8a8a8] backdrop:blur-[10px] w-full hover:bg-[#136b8890] h-[5rem] ${
                     index === currentSelected ? "selected bg-[#085866]" : ""
                   }`}
                   onClick={() => changeCurrentChat(index, contact)}
                 >
                   <div className="avatar">
                     <img
-                      src={`data:image/svg+xml;base64,${contact.avatarImage}`}
+                      // src={`data:image/svg+xml;base64,${contact.avatarImage}`}
+                      src={contact.avatarImage}
+
                       alt=""
                     />
                   </div>
@@ -50,17 +59,20 @@ export default function Contacts({ contacts, changeChat }) {
               );
             })}
           </div>
-          <div className="current-user bg-[#085866]">
+          <div className="current-user border-t-[1px]  border-[#a8a8a8] backdrop:blur-[90px] bg-[#085866]">
             <div className="avatar">
-              <img
-                src={me}
+              <img className="h-[5rem] rounded-[50%] "
+                 src={currentUserImage}
+              
                 alt="avatar"
               />
             </div>
-            <div className="username">
+            <div className="username ">
               <h2>{currentUserName}</h2>
             </div>
           </div>
+          
+          
         </Container>
       )}
     </>
@@ -70,7 +82,8 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: 10% 75% 15%;
   overflow: hidden;
-  background-color: #000;
+  background-color: #080808;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24.98' height='25' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='96' height='96' fill-opacity='0.85' fill='%23000000'/%3E%3C/svg%3E");
   .brand {
     display: flex;
     align-items: center;
@@ -89,7 +102,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     overflow: auto;
-    gap: 0.8rem;
+    gap: 0rem;
     &::-webkit-scrollbar {
       width: 0.2rem;
       &-thumb {
@@ -107,6 +120,8 @@ const Container = styled.div`
       display: flex;
       gap: 1rem;
       align-items: center;
+      filter: drop-shadow(0px 0px 1px white);
+
       transition: 0.5s ease-in-out;
       .avatar {
         img {

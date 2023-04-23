@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import styled from "styled-components";
 import Logo from "../assets/logo.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -63,8 +64,8 @@ export default function Login() {
 
   return (
     <>
-      {/* <FormContainer> */}
-        <div className="h-[100vh] w-full bg-[#070707] flex justify-center items-center">
+      <FormContainer>
+        <div className="container h-[100vh] w-full bg-[#070707] flex justify-center items-center">
           <div className="flex drop1" >
           
             <img className="h-[30rem] rounded-l-[20px] " src={loginimg} alt="" />
@@ -95,10 +96,19 @@ export default function Login() {
         </form>
         </div>
           </div>
-          
+          </FormContainer>
         
       <ToastContainer />
     </>
   );
 }
 
+const FormContainer = styled.div`
+
+.container {
+  background-color: #080808;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24.98' height='25' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='96' height='96' fill-opacity='0.85' fill='%23000000'/%3E%3C/svg%3E");
+}
+
+
+`;

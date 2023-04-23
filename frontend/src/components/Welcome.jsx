@@ -13,10 +13,10 @@ export default function Welcome() {
   return (
     <Container className="bg-[#010101ac] border-l-[1px] text-[2rem] border-[#4f4f4f]">
       <img className=" rounded-[50%] " src={Hello} alt="" />
-      <h1 className="pt-[3rem]">
+      <h1 className="pt-[3rem] text-[5rem]">
         Welcome, <span className="text-[yellow]" >{userName}!</span>
       </h1>
-      <h3>Please tap on a chat to procede</h3>
+      <h3>Please tap on a chat to proceede</h3>
     </Container>
   );
 }
@@ -29,8 +29,12 @@ const Container = styled.div`
   flex-direction: column;
   img {
     height: 20rem;
+    filter: drop-shadow(0px 0px 80px #085866);
   }
   span {
     
+  }
+  h1{
+    font-family: 'Rubik Pixels', cursive;
   }
 `;
