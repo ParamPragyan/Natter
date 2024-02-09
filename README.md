@@ -11,6 +11,10 @@ authentication.
 
 ![alt text](public/image.png)
 
+<blockquote><b><i>Set Your Avatar</i></b></blockquote>
+
+![alt text](public/image5.png)
+
 <blockquote><b><i>welcome page</i></b></blockquote>
 
 ![alt text](public/image-3.png)
@@ -30,7 +34,7 @@ authentication.
 
 ## Try out the Live Link
 https://natter-liart.vercel.app
-<blockquote><i>In 2 to 3 days the link will be fully functional.</i></blockquote>
+<blockquote><i>In 2 to 3 days the link will be fully Responsive.</i></blockquote>
 
 
 
