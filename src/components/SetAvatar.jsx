@@ -58,7 +58,7 @@ export default function SetAvatar() {
 
   useEffect(() => {
     const randomapi = async () => {
-      const data = [`https://avatarfiles.alphacoders.com/325/thumb-325437.jpg`,`https://avatarfiles.alphacoders.com/178/thumb-178706.jpg`, `https://avatarfiles.alphacoders.com/340/thumb-340443.jpg`, `https://avatarfiles.alphacoders.com/176/thumb-176039.jpg`, `https://avatarfiles.alphacoders.com/337/thumb-337732.jpg`, `https://avatarfiles.alphacoders.com/852/thumb-85202.jpg`,`https://avatarfiles.alphacoders.com/276/thumb-276208.jpg`,`https://avatarfiles.alphacoders.com/342/thumb-342667.png`, `https://avatarfiles.alphacoders.com/124/thumb-124510.png`];
+      const data = [`https://avatarfiles.alphacoders.com/348/348411.png`,`https://avatarfiles.alphacoders.com/178/thumb-178706.jpg`, `https://avatarfiles.alphacoders.com/340/thumb-340443.jpg`, `https://avatarfiles.alphacoders.com/176/thumb-176039.jpg`, `https://avatarfiles.alphacoders.com/337/thumb-337732.jpg`, `https://avatarfiles.alphacoders.com/852/thumb-85202.jpg`,`https://avatarfiles.alphacoders.com/346/346945.png`,`https://avatarfiles.alphacoders.com/342/thumb-342667.png`, `https://avatarfiles.alphacoders.com/348/348754.png`];
       try {
         // for (let i = 0; i < 4; i++) {
         //   // const url = `${api}${Math.round(Math.random() * 1000)}`;
