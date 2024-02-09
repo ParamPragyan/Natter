@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# NATTER
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+NATTER is a cutting-edge chat application designed using MERN stack and Socket.io. With its features
+and user-friendly interface, NATTER allows users to easily connect with one another and engage in realtime conversations. NATTER is an end-to-end encrypted chatting application with proper user
+authentication.
 
-## Available Scripts
+## Snapshot:
 
-In the project directory, you can run:
 
-### `npm start`
+<blockquote><b><i>login page</i></b></blockquote>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![alt text](public/image.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<blockquote><b><i>welcome page</i></b></blockquote>
 
-### `npm test`
+![alt text](public/image-3.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<blockquote><b><i>chatting page</i></b></blockquote>
 
-### `npm run build`
+![alt text](public/image-4.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technology Used:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **ReactJS**
+2. **NodeJS**
+3. **express.js**
+4. **MongoDB**
+5. **Styled Components**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Try out the Live Link
+https://natter-liart.vercel.app
+<blockquote><i>In 2 to 3 days the link will be fully functional.</i></blockquote>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone both the repository to your local machine:
 
-## Learn More
+```bash
+git clone https://github.com/ParamPragyan/Natter.git
+git clone https://github.com/ParamPragyan/Natter-backend.git
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Navigate to the project's directory:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+cd Natter
+cd Natter-backend
+```
 
-### Code Splitting
+3. Install dependencies using npm:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm install
+```
 
-### Analyzing the Bundle Size
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Running the App
 
-### Making a Progressive Web App
+To run the app in development mode, use the following command in both the repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm start
+```
 
-### Advanced Configuration
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Credentials:
+```bash
+login: user3
+password: 123456
+```
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Checkout the repository:
+https://github.com/ParamPragyan/Natter-backend
